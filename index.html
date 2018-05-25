@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>turnup</title>
+    <meta name=viewport content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" media="screen" href="style/html5reset-1.6.1.css">
+    <link rel="stylesheet" media="screen" href="font-awesome-4.7.0/css/font-awesome.css">
+    <link rel="stylesheet" media="screen" href="style/master.css">
+    <script src="scripts/audioplayer.js"></script>
+  </head>
+  <body>
+
+    <!-- ==== App Header ==== -->
+    <header>
+      <ul>
+        <li><a href="#"><img src="img/TurnupLogo.svg" alt="The logo of the TurnUp site" height="50px" width="50px" /></a></li>
+      </ul>
+    </header>
+
+    <!-- ==== App Mainbody ==== -->
+    <main>
+
+      <!-- ==== Playlists ==== -->
+      <section class="appList">
+        <h2>Playlists</h2>
+        <ul>
+          <li><button onclick="selectPlaylist(1)">PlaceHolderPlaylist1</button></li>
+          <li><button onclick="selectPlaylist(2)">PlaceHolderPlaylist2</button></li>
+          <li><button onclick="selectPlaylist(3)">PlaceHolderPlaylist3</button></li>
+          <li><button onclick="selectPlaylist(4)">PlaceHolderPlaylist4</button></li>
+          <li><button onclick="selectPlaylist(5)">PlaceHolderPlaylist5</button></li>
+          <li><button onclick="selectPlaylist(6)">PlaceHolderPlaylist6</button></li>
+          <li><button onclick="selectPlaylist(7)">PlaceHolderPlaylist7</button></li>
+          <li><button onclick="selectPlaylist(8)">PlaceHolderPlaylist8</button></li>
+        </ul>
+      </section>
+
+      <!-- ==== Player ==== -->
+      <section class="appBlock">
+        <h2 id="playlistName">Playlist name</h2>
+        <h1 id="songName"></h1>
+        <div class="playerInfo">
+
+          <!-- ==== PlayerImages ==== -->
+          <div class="playerImages">
+            <figure>
+              <img id="coverArt" src="http://placehold.it/400x400" alt="A placeholder image" class="responsive" onclick="playSong()"/>
+              <h3 id="artistName"></h3>
+              <!--<h3>Songs from <a href="http://bensound.com">Bensounds.com</a></h3>-->
+              <h3 id="album"></h3>
+
+            </figure>
+            <div class="sideImages">
+              <img id="sideArt1" src="http://placehold.it/190x190" alt="A placeholder image" class="responsive" onclick="nextSong()"/>
+              <img id="sideArt2" src="http://placehold.it/190x190" alt="A placeholder image" class="responsive" onclick="next2Song()"/>
+            </div>
+          </div>
+
+          <!-- ==== Upcoming Songs ==== -->
+          <div class="upcomingTracks">
+            <h2>Tracks</h2>
+            <ul>
+              <li><button onclick="selectSong(0)">Demo1</button></li>
+              <li><button onclick="selectSong(1)">Demo2</button></li>
+              <li><button onclick="selectSong(2)">Demo3</button></li>
+              <li><button onclick="selectSong(3)">Demo4</button></li>
+              <li><button onclick="selectSong(4)">Demo5</button></li>
+              <li><button onclick="selectSong(5)">Demo6</button></li>
+              <li><button onclick="selectSong(6)">Demo7</button></li>
+              <li><button onclick="selectSong(7)">Demo8</button></li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==== Audio Player ==== -->
+      <audio id="aSong" src="music/nanahatsuji.mp3" oncanplay="updatePlayer()" onended="nextSong()">
+        <p>Your Browser does not support audio playback</p>
+      </audio>
+    </main>
+
+    <!-- ==== Playback buttons ==== -->
+    <nav>
+      <ul>
+        <li><button onclick="prevSong()"><i class="fa fa-step-backward" aria-hidden="true"></i></button></li>
+        <li><button onclick="pauseSong()"><i class="fa fa-pause" aria-hidden="true"></i></button></li>
+        <li><button onclick="playSong()"><i class="fa fa-play" aria-hidden="true"></i></button></li>
+        <li><button onclick="stopSong()"><i class="fa fa-stop" aria-hidden="true"></i></button></li>
+        <li><button onclick="nextSong()"><i class="fa fa-step-forward" aria-hidden="true"></i></button></li>
+      </ul>
+    </nav>
+  </body>
+</html>
